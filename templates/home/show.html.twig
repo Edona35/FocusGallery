@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ photo.title }}{% endblock %}
+
+{% block body %}
+
+<div class="container py-5">
+
+    <div class="row align-items-center g-5">
+
+
+        <div class="col-lg-7">
+
+            <img
+                src="{{ asset('uploads/photos/' ~ photo.imageName) }}"
+                alt="{{ photo.title }}"
+                class="img-fluid rounded shadow w-100"
+            >
+
+        </div>
+
+   
+
+        <div class="col-lg-5">
+
+
+            <span
+                class="badge text-white mb-3"
+                style="background-color: {{ photo.category.color|default('#6c757d') }}"
+            >
+                {{ photo.category.name }}
+            </span>
+
+          
+            <h1 class="mb-4">
+                {{ photo.title }}
+            </h1>
+
+    
+
+            <p class="text-muted lh-lg">
+
+                {{ photo.description }}
+
+            </p>
+
+
+            <a
+                href="{{ path('app_home') }}"
+                class="btn btn-dark mt-3"
+            >
+                Retour à la galerie
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
