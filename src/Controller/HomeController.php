@@ -17,6 +17,7 @@ class HomeController extends AbstractController
         PhotoRepository $photoRepository,
         CategoryRepository $categoryRepository
     ): Response {
+          
 
         return $this->render('home/index.html.twig', [
             'photos' => $photoRepository->findAll(),
@@ -39,6 +40,8 @@ class HomeController extends AbstractController
         CategoryRepository $categoryRepository
     ): Response {
 
+
+  
         return $this->render('home/index.html.twig', [
             'photos' => $photoRepository->findBy([
                 'category' => $category
